@@ -1,19 +1,91 @@
-[gd_scene load_steps=2 format=3 uid="uid://blblftwrkj606"]
+[gd_scene load_steps=6 format=3 uid="uid://blblftwrkj606"]
+
+[ext_resource type="Texture2D" uid="uid://mxs102tfyu17" path="res://Assets/Character/Obstacle/2.png" id="1_2yxk8"]
+[ext_resource type="Texture2D" uid="uid://3vghix6ibrlc" path="res://Assets/Character/Obstacle/3.png" id="2_245k1"]
+[ext_resource type="Texture2D" uid="uid://b1ugt4yas32ie" path="res://Assets/Character/Obstacle/obstacle-removebg-preview (1).png" id="3_7acje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tr2i4"]
 size = Vector2(72, 40)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rugi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2yxk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2yxk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2yxk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2yxk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2yxk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2yxk8")
+}],
+"loop": true,
+"name": &"obstacle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_245k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_245k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_245k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_245k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_245k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_245k1")
+}],
+"loop": true,
+"name": &"obstacle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7acje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7acje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7acje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7acje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7acje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7acje")
+}],
+"loop": true,
+"name": &"obstacle3",
+"speed": 5.0
+}]
+
 [node name="LeftObstacle" type="Area2D"]
 position = Vector2(74, -31)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -30.0
-offset_top = -24.0
-offset_right = 42.0
-offset_bottom = 16.0
-color = Color(1, 0, 1, 1)
-metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -4)
 shape = SubResource("RectangleShape2D_tr2i4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0rugi")
+animation = &"obstacle1"

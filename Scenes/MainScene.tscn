@@ -1,41 +1,148 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7qtitubq2osy"]
+[gd_scene load_steps=29 format=3 uid="uid://b7qtitubq2osy"]
 
 [ext_resource type="Script" uid="uid://tu63ox8r7dm0" path="res://Scripts/Player.gd" id="1_hpc76"]
 [ext_resource type="Script" uid="uid://elxsrnrfa16o" path="res://Scripts/main_scene.gd" id="1_tr2i4"]
+[ext_resource type="Texture2D" uid="uid://dbxlijvknuhb6" path="res://Assets/Background/background2 (1).png" id="2_gyaec"]
+[ext_resource type="Texture2D" uid="uid://kbjletik8jyr" path="res://Assets/Character/Idle__000.png" id="3_4b75m"]
 [ext_resource type="PackedScene" uid="uid://blblftwrkj606" path="res://Scenes/LeftObstacle.tscn" id="3_7rqgy"]
+[ext_resource type="Texture2D" uid="uid://cij8fijpcmyrv" path="res://Assets/Character/Idle__002.png" id="4_8ju71"]
 [ext_resource type="PackedScene" uid="uid://djhsdcy44g1k6" path="res://Scenes/RightObstacle.tscn" id="4_qxria"]
+[ext_resource type="Texture2D" uid="uid://bfrpeawc0ciuh" path="res://Assets/Character/Idle__004.png" id="5_xb4mg"]
+[ext_resource type="Texture2D" uid="uid://cou4bpy855wi2" path="res://Assets/Character/Idle__006.png" id="6_6t1o7"]
+[ext_resource type="Texture2D" uid="uid://cbyj8gt68a2hi" path="res://Assets/Character/Idle__008.png" id="7_5qxwa"]
+[ext_resource type="Texture2D" uid="uid://co4w8govxco8m" path="res://Assets/Character/Idle__009.png" id="8_xc4hf"]
+[ext_resource type="Texture2D" uid="uid://s7ckbjk0kwam" path="res://Assets/Character/Run__000.png" id="9_c1ier"]
+[ext_resource type="Texture2D" uid="uid://da5nn70ahasx" path="res://Assets/Character/Jump__000.png" id="9_r0vnq"]
+[ext_resource type="Texture2D" uid="uid://be8h6konre6x7" path="res://Assets/Character/Jump__001.png" id="10_c3pre"]
+[ext_resource type="Texture2D" uid="uid://b0l3neyugbak5" path="res://Assets/Character/Jump__002.png" id="11_u5v48"]
+[ext_resource type="Texture2D" uid="uid://cfrrl8b1i64ga" path="res://Assets/Character/Jump__005.png" id="12_s1acj"]
+[ext_resource type="Texture2D" uid="uid://cqylufldy5siy" path="res://Assets/Character/Jump__006.png" id="13_t8ijv"]
+[ext_resource type="Texture2D" uid="uid://dosr6l1ev1bw1" path="res://Assets/Character/Jump__007.png" id="14_rv6c1"]
+[ext_resource type="Texture2D" uid="uid://bq1vmv0o27pq1" path="res://Assets/Character/Jump__008.png" id="15_dtg5n"]
+[ext_resource type="Texture2D" uid="uid://crvs88qriqciv" path="res://Assets/Character/Jump__009.png" id="16_d0jji"]
+[ext_resource type="Texture2D" uid="uid://dvow7pe2nvdy" path="res://Assets/Background/walls.png" id="18_c1ier"]
+[ext_resource type="AudioStream" uid="uid://cn6ceo0qlq26v" path="res://Assets/SoundsFx/bgmusic.mp3" id="22_bpy1e"]
+[ext_resource type="AudioStream" uid="uid://ctlpuxogxtycm" path="res://Assets/SoundsFx/jumpsoundfx (mp3cut.net).mp3" id="23_3va76"]
+[ext_resource type="AudioStream" uid="uid://kdjv4fobam4q" path="res://Assets/SoundsFx/100scoreFx.mp3" id="24_wmecs"]
+[ext_resource type="AudioStream" uid="uid://mktf74p5t2y8" path="res://Assets/SoundsFx/Game Over sound effect.mp3" id="25_wmecs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cihdc"]
 size = Vector2(66, 40)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rnll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4b75m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8ju71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xb4mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6t1o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5qxwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xc4hf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_r0vnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c3pre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u5v48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s1acj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t8ijv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rv6c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dtg5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_d0jji")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_c1ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c1ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c1ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c1ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c1ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c1ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c1ier")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpc76"]
 size = Vector2(40, 801)
 
-[node name="Node2D" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 script = ExtResource("1_tr2i4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(280, 500)
+scale = Vector2(0.59006, 0.763003)
+texture = ExtResource("2_gyaec")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(66, 727)
 script = ExtResource("1_hpc76")
 
-[node name="ColorRect" type="ColorRect" parent="Player"]
-offset_left = -18.0
-offset_top = -18.0
-offset_right = 48.0
-offset_bottom = 22.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(15, 2)
 shape = SubResource("RectangleShape2D_cihdc")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(16, 4.00002)
+rotation = 1.56788
+scale = Vector2(-0.212549, 0.209576)
+sprite_frames = SubResource("SpriteFrames_6rnll")
+animation = &"running"
+frame_progress = 0.253868
+
 [node name="RightWall" type="StaticBody2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="RightWall"]
-offset_left = 460.0
-offset_top = -654.0
-offset_right = 502.0
-offset_bottom = 801.0
-color = Color(0, 1, 1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="RightWall"]
+position = Vector2(643, 403)
+scale = Vector2(1, 1.02423)
+texture = ExtResource("18_c1ier")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 position = Vector2(480, 401)
@@ -43,18 +150,34 @@ shape = SubResource("RectangleShape2D_hpc76")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="LeftWall"]
-offset_top = -667.0
-offset_right = 40.0
-offset_bottom = 802.0
-color = Color(0, 1, 1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="LeftWall"]
+position = Vector2(-143, 398)
+scale = Vector2(1, 1.02423)
+texture = ExtResource("18_c1ier")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(20, 401.5)
+position = Vector2(19, 400)
 shape = SubResource("RectangleShape2D_hpc76")
 
 [node name="LeftObstacle" parent="." instance=ExtResource("3_7rqgy")]
 position = Vector2(181, -40)
 
 [node name="RightObstacle" parent="." instance=ExtResource("4_qxria")]
-position = Vector2(278, -16)
+position = Vector2(292, -30)
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_bpy1e")
+volume_db = -21.55
+autoplay = true
+
+[node name="JumpFx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_3va76")
+volume_db = -19.676
+
+[node name="100ScoreFx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_wmecs")
+volume_db = -30.919
+
+[node name="Gameover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_wmecs")
+volume_db = -28.108

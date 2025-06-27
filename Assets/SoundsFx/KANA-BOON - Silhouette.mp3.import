@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6mvt5spu7tsd"
+path="res://.godot/imported/KANA-BOON - Silhouette.mp3-a9488b6c40af35aea4ed9a0328a3c5b1.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundsFx/KANA-BOON - Silhouette.mp3"
+dest_files=["res://.godot/imported/KANA-BOON - Silhouette.mp3-a9488b6c40af35aea4ed9a0328a3c5b1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
