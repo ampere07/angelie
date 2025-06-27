@@ -1,6 +1,6 @@
 extends Node2D
 
-const BASE_SCROLL_SPEED = 150.0
+const BASE_SCROLL_SPEED = 250.0
 const SPEED_INCREASE = 20.0
 var current_scroll_speed = BASE_SCROLL_SPEED
 
@@ -218,7 +218,7 @@ func _on_restart_pressed():
 func _on_main_menu_pressed():
 	print("Going to main menu...")
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-	get_tree().reload_current_scene()
+
 
 func create_ui():
 	var ui_control = Control.new()
